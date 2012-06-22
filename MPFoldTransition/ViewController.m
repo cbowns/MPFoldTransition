@@ -13,6 +13,8 @@
 #import "MPFoldSegue.h"
 #import "DetailsViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MPCubeTransition.h"
+
 
 #define ABOUT_IDENTIFIER		@"AboutID"
 #define DETAILS_IDENTIFIER		@"DetailsID"
@@ -236,7 +238,23 @@
 									  [stepper setUserInteractionEnabled:YES];
 								  }
 		 ];
+
+/*
+// Sample cube transition:
+		[MPCubeTransition transitionFromView:previousView
+		                              toView:nextView
+		                            duration:[MPCubeTransition defaultDuration]
+		                               style:forwards? [self style]	: MPFoldStyleFlipFoldBit([self style])
+		                    transitionAction:MPTransitionActionAddRemove
+		                          completion:^(BOOL finished)
+		{
+			[stepper setUserInteractionEnabled:YES];
+		}
+	 ];
+*/
+
 	}
+
 }
 
 - (IBAction)infoPressed:(UIBarButtonItem *)sender {
